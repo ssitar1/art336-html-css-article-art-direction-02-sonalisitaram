@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/*
+Main Rules
+    This file simply compiles all the seperate files into a single file that will be outputted as main.css.
+*/
+/* 
+Globals
+	Sass variable, mixins, plugins, etc. that are used throughout the entore site.
+*/
+/* 
+Base Rules
+	A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudoclasses. It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+*/
+html {
+  background-color: #575a0e;
+}
+
+body {
+  color: #575a0e;
+  background-color: #FFFFFF;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+footer[role="contentinfo"] {
+  color: #242424;
+  display: list-item;
+  list-style-type: none;
+  text-align: center;
+  padding-top: 10px;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+Layout Rules
+    CSS, by its very nature, is used to lay elements out on the page. However, there is a distinction between layouts dictating the major and minor components of a page. The minor components—such as a callout, or login form, or a navigation item—sit within the scope of major components such as a header or footer. I refer to the minor components as Modules and will dive into those in the next section. The major components are referred to as Layout styles.
+    Layout styles can also be divided into major and minor styles based on reuse. Major layout styles such as header and footer are traditionally styled using ID selectors but take the time to think about the elements that are common across all components of the page and use class selectors where appropriate.
+*/
+nav[role="navigation"] {
+  padding-right: 5px;
+  text-align: right;
+}
+
+nav[role="navigation"] ul {
+  margin: 12px 0 0 0;
+  padding: 0;
+}
+
+nav[role="navigation"] ul li {
+  list-style-type: none;
+  display: list-item;
+  margin: 0;
+  padding: 2px;
+}
+
+header[role="banner-headline"] h1 {
+  padding-bottom: 0;
+  padding-left: 20px;
+}
+
+/* 
+Module Rules
+    A Module is a more discrete component of the page. It is your navigation bars and your carousels and your dialogs and your widgets and so on. This is the meat of the page. Modules sit inside Layout components. Modules can sometimes sit within other Modules, too. Each Module should be designed to exist as a standalone component. In doing so, the page will be more flexible. If done right, Modules can easily be moved to different parts of the layout without breaking.
+    When defining the rule set for a module, avoid using IDs and element selectors, sticking only to class names. A module will likely contain a number of elements and there is likely to be a desire to use descendent or child selectors to target those elements. 
+*/
+.toggle-button {
+  color: #575a0e;
+  display: list-item;
+  list-style-type: none;
+  padding: 0 4px;
+  text-decoration: none;
+}
+
+nav[role="navigation"] ul {
+  list-style-type: none;
+}
+
+nav[role="navigation"] ul a {
+  border: 1px solid #242424;
+  color: #242424;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 4px;
+  text-decoration: none;
+}
+
+nav[role="navigation"] ul a :hover {
+  border: 1px solid #717171;
+  color: #717171;
+}
+
+h1 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  padding-top: 5px;
+  padding-left: 120px;
+  text-align: center;
+}
+
+h3 {
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+h4 {
+  padding-left: 30px;
+}
+
+p {
+  padding-left: 40px;
+  padding-top: 0;
+}
+
+img {
+  text-align: center;
+  width: 450px;
+}
+
+/* 
+State Rules
+	A state is something that augments and overrides all other styles.
+For example, an accordion section may be in a collapsed or expanded
+state. A message may be in a success or error state.
+	States are generally applied to the same element as a layout rule or
+applied to the same element as a base module class. 
+*/
+/*! http://responsiveslides.com v1.54 by @viljamis */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+
+.callbacks_container {
+  margin-bottom: 16px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.callbacks .caption {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  text-shadow: none;
+  color: #fff;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 20px;
+  margin: 0;
+  max-width: none;
+}
+
+.callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: transparent;
+  top: 52%;
+  left: 0;
+  opacity: 0.7;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("../img/themes.gif") no-repeat left top;
+  margin-top: -20px;
+}
+
+.callbacks_nav.next {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  content: 'Next';
+}
+
+.callbacks_nav.prev {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.callbacks_nav:active {
+  opacity: 1.0;
+}
+
+.callbacks_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .callbacks_nav {
+    top: 47%;
+  }
+}
